@@ -7,6 +7,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, BehaviorSubject, from, of } from 'rxjs';
 import { switchMap, map, take } from 'rxjs/operators';
 
+// create an instance of the JWT decoder utility and use it directly:
 const helper = new JwtHelperService();
 const TOKEN_KEY = 'auth-token';
 
@@ -52,7 +53,7 @@ export class AuthService {
 			return of(null);
 		}
 
-		// replicate a backend auth service
+		// replicate a backend auth service. JWT token does not actually use the random user data - this is to be corrected.
 		return this.http.get('https://randomuser.me/api/').pipe(
 			take(1),
 			map(res => {
@@ -80,5 +81,4 @@ export class AuthService {
 			this.userData.next(null);
 		});
 	}
-
 }
