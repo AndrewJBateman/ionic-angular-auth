@@ -1,44 +1,46 @@
-# Ionic Angular Auth
+# :zap: Ionic Angular Auth
 
-App to prevent access to 'members' route if user not authorized. Authorization is via email & password converted to a JWT token instead of using a backend.
+* App to prevent access to 'members' route if user not authorized. Authorization is via email & password converted to a JWT token instead of using a backend.
+* Another great tutorial from [Simon Grimm of the IonicAcademy, Youtube video 'Building an Ionic 4 JWT Login with Tab Bar & Angular Routing'](https://www.youtube.com/watch?v=lNqXCn8KacI).
 
-This is another great tutorial from [Simon Grimm of the IonicAcademy, Youtube video 'Building an Ionic 4 JWT Login with Tab Bar & Angular Routing'](https://www.youtube.com/watch?v=lNqXCn8KacI).
+## :page_facing_up: Table of contents
 
-## Table of contents
+* [:zap: Ionic Angular Auth](#zap-ionic-angular-auth)
+  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:books: General info](#books-general-info)
+  * [:camera: Screenshots](#camera-screenshots)
+  * [:signal_strength: Technologies](#signal_strength-technologies)
+  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
+  * [:clipboard: Status & To-do list](#clipboard-status--to-do-list)
+  * [:clap: Inspiration](#clap-inspiration)
+  * [:envelope: Contact](#envelope-contact)
 
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
-
-## General info
+## :books: General info
 
 * Initial screen is a login page with email and password fields. Angular 'canActivate' authguard limits access to the 'members/' route to only authorised (JWT token-bearing) users.
 
-## Screenshots
+## :camera: Screenshots
 
-![screenshot](./img/home_csv.png)
+![screenshot](./img/login.png)
 
-## Technologies
+## :signal_strength: Technologies
 
-* [Ionic v5.0.0](https://ionicframework.com/)
-* [Ionic/angular v4.7.1](https://ionicframework.com/)
-* [Angular v8.1.2](https://angular.io/)
-* [Angular RxJS Library v6.5.1](https://angular.io/guide/rx-library) Observable functions
-* [Angular JWT library v3.0.0](https://www.npmjs.com/package/@auth0/angular-jwt) provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests. Used as a standalone JWT decoder.
-* [Ionic Storage v2.2.0](https://www.npmjs.com/package/@ionic/storage) key-value Storage module based on LocalForage.
+* [Ionic v5](https://ionicframework.com/)
+* [Ionic/angular v5](https://ionicframework.com/)
+* [Angular v10](https://angular.io/)
+* [Angular RxJS Library v6](https://angular.io/guide/rx-library) Observable functions
+* [@auth0/angular-jwt v5](https://www.npmjs.com/package/@auth0/angular-jwt) provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.
+* [Ionic Storage v2](https://www.npmjs.com/package/@ionic/storage) key-value Storage module based on LocalForage.
 
-## Setup
+## :floppy_disk: Setup
 
 * To start the server on _localhost://8100_ type: 'ionic serve'
 * To start the server on a mobile using Ionic devapp and connected via wifi, type: 'ionic serve --devapp'
 * The Ionic DevApp was installed on an Android device from the Google Play app store.
 
-## Code Examples
+## :computer: Code Examples
 
 * canActivate function uses auth service to see if user authorized.
 
@@ -68,22 +70,20 @@ canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
 }
 ```
 
-## Features
+## :cool: Features
 
 * JWT token generated and stored using Ionic Storage. AuthGuard canActivate only true with this token. Token removed upon logging out.
 
-## Status & To-do list
+## :clipboard: Status & To-do list
 
 * Status: Working. tested using ionic server.
+* To-do: nothing
 
-* To-do: change to use dummy backend random user data then change to a proper backend. Use in one of my own Ionic apps.
+## :clap: Inspiration
 
-## Inspiration
+* [Simon Grimm of the IonicAcademy, Youtube video 'Building an Ionic 4 JWT Login with Tab Bar & Angular Routing'](https://www.youtube.com/watch?v=lNqXCn8KacI)
+* [Written version of tutorial from Devtactic website: Building an Ionic 4 JWT Login with Tab Bar & Angular Routing](https://devdactic.com/ionic-4-jwt-login/)
 
-[Simon Grimm of the IonicAcademy, Youtube video 'Building an Ionic 4 JWT Login with Tab Bar & Angular Routing'](https://www.youtube.com/watch?v=lNqXCn8KacI)
+## :envelope: Contact
 
-[Written version of tutorial from Devtactic website: Building an Ionic 4 JWT Login with Tab Bar & Angular Routing](https://devdactic.com/ionic-4-jwt-login/)
-
-## Contact
-
-Repo created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
