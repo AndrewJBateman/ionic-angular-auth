@@ -10,24 +10,27 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 	credentials = {
-		email: 'test@test.com',
-		password: 'password'
+		email: 'test@example.com',
+		password: 'password',
 	};
 
-	constructor(private auth: AuthService, private alertCtrl: AlertController, private router: Router) { }
+	constructor(
+		private auth: AuthService,
+		private alertCtrl: AlertController,
+		private router: Router
+	) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	login() {
-		this.auth.login(this.credentials).subscribe(async res => {
+		this.auth.login(this.credentials).subscribe(async (res) => {
 			if (res) {
 				this.router.navigateByUrl('/members');
 			} else {
 				const alert = await this.alertCtrl.create({
 					header: 'Login Failed',
 					message: 'User credentials are incorrect',
-					buttons: ['OK']
+					buttons: ['OK'],
 				});
 				await alert.present();
 			}

@@ -1,7 +1,7 @@
 # :zap: Ionic Angular Auth
 
 * App to prevent access to 'members' route if user not authorized. Authorization is via email & password converted to a JWT token instead of using a backend.
-* Another great tutorial from [Simon Grimm of the IonicAcademy, Youtube video 'Building an Ionic 4 JWT Login with Tab Bar & Angular Routing'](https://www.youtube.com/watch?v=lNqXCn8KacI).
+* Another great tutorial from [Simon Grimm of the IonicAcademy'](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg) - see [:clap: Inspiration](#clap-inspiration) below.
 
 ## :page_facing_up: Table of contents
 
@@ -11,7 +11,7 @@
   * [:camera: Screenshots](#camera-screenshots)
   * [:signal_strength: Technologies](#signal_strength-technologies)
   * [:floppy_disk: Setup](#floppy_disk-setup)
-  * [:computer: Code Examples](#computer-code-examples)
+  * [:computer: Code Examples from Simon Grimm of the IonicAcademy'](#computer-code-examples-from-simon-grimm-of-the-ionicacademy)
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-do list](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
@@ -19,7 +19,12 @@
 
 ## :books: General info
 
-* Initial screen is a login page with email and password fields. Angular 'canActivate' authguard limits access to the 'members/' route to only authorised (JWT token-bearing) users.
+* Initial screen is a login page with email and password fields.
+* Angular 'canActivate' authguard limits access to the 'members/' route to only authorised (JWT token-bearing) users.
+* Example login details stored in app to test login system and avoid the need for a backend
+* Correct login credentials routes user to 'member' page
+* User credentials stored in Ionic storage so they can be viewed in Dev console/Application/Storage/Ionic Storage/_ionickv
+* Note: the 'register' page does not actually do anything
 
 ## :camera: Screenshots
 
@@ -29,18 +34,20 @@
 
 * [Ionic v5](https://ionicframework.com/)
 * [Ionic/angular v5](https://ionicframework.com/)
-* [Angular v10](https://angular.io/)
+* [Angular v11](https://angular.io/)
 * [Angular RxJS Library v6](https://angular.io/guide/rx-library) Observable functions
 * [@auth0/angular-jwt v5](https://www.npmjs.com/package/@auth0/angular-jwt) provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.
 * [Ionic Storage v2](https://www.npmjs.com/package/@ionic/storage) key-value Storage module based on LocalForage.
 
 ## :floppy_disk: Setup
 
+* Run `npm i` to install dependencies
 * To start the server on _localhost://8100_ type: 'ionic serve'
+* App uses example credentials to test system. There is no connection to an external database etc.
 * To start the server on a mobile using Ionic devapp and connected via wifi, type: 'ionic serve --devapp'
 * The Ionic DevApp was installed on an Android device from the Google Play app store.
 
-## :computer: Code Examples
+## :computer: Code Examples from [Simon Grimm of the IonicAcademy'](https://www.youtube.com/channel/UCZZPgUIorPao48a1tBYSDgg)
 
 * canActivate function uses auth service to see if user authorized.
 
@@ -72,12 +79,13 @@ canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
 
 ## :cool: Features
 
-* JWT token generated and stored using Ionic Storage. AuthGuard canActivate only true with this token. Token removed upon logging out.
+* JWT token generated and stored using Ionic Storage - viewable in the Dev console.
+* AuthGuard canActivate only true with this token. Token removed upon logging out.
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. tested using ionic server.
-* To-do: nothing
+* Status: Working. Tested using ionic server and dummy user credentials to replace 'register' function.
+* To-do: Nothing
 
 ## :clap: Inspiration
 

@@ -12,7 +12,7 @@ const helper = new JwtHelperService();
 const TOKEN_KEY = 'auth-token';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class AuthService {
 	public user: Observable<any>;
@@ -34,7 +34,7 @@ export class AuthService {
 			switchMap(() => {
 				return from(this.storage.get(TOKEN_KEY));
 			}),
-			map(token => {
+			map((token) => {
 				console.log('token from storage: ', token);
 				if (token) {
 					const decoded = helper.decodeToken(token);
@@ -48,19 +48,22 @@ export class AuthService {
 		);
 	}
 
-	login(credentials: {email: string, password: string}): Observable<any> {
-		if (credentials.email !== 'gombate@yahoo.com' || credentials.password !== 'password') {
+	login(credentials: { email: string; password: string }): Observable<any> {
+		if (
+			credentials.email !== 'letme@in.com' ||
+			credentials.password !== 'password'
+		) {
 			return of(null);
 		}
 
 		// replicate a backend auth service. JWT token does not actually use the random user data - this is to be corrected.
 		return this.http.get('https://randomuser.me/api/').pipe(
 			take(1),
-			map(res => {
+			map((res) => {
 				// tslint:disable-next-line: max-line-length
 				return `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdvbWJhdGVAeWFob28uY29tIiwiZmlyc3RfbmFtZSI6IkJlbiIsImxhc3RfbmFtZSI6IlN0aWxsZXIifQ._HVnO5zwR5mep1JQ3sgiVAn_VnZKCsbTlwtIhDi75cA`;
 			}),
-			switchMap(token => {
+			switchMap((token) => {
 				const decoded = helper.decodeToken(token);
 				console.log('login decoded: ', decoded);
 				this.userData.next(decoded);
