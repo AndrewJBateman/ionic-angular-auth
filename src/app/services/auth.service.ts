@@ -2,7 +2,7 @@ import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, BehaviorSubject, from, of } from 'rxjs';
 import { switchMap, map, take } from 'rxjs/operators';
