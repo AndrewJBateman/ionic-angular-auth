@@ -1,5 +1,5 @@
 import { Platform } from '@ionic/angular';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
@@ -14,7 +14,7 @@ const TOKEN_KEY = 'auth-token';
 @Injectable({
 	providedIn: 'root',
 })
-export class AuthService implements OnInit {
+export class AuthService {
 	public user: Observable<any>;
 	private userData = new BehaviorSubject(null);
 
@@ -27,11 +27,8 @@ export class AuthService implements OnInit {
 		this.loadStoredToken();
 	}
 
-	async ngOnInit() {
+	async loadStoredToken() {
 		await this.storage.create();
-	}
-
-	loadStoredToken() {
 		const platformObs = from(this.plt.ready());
 
 		this.user = platformObs.pipe(
@@ -87,5 +84,6 @@ export class AuthService implements OnInit {
 			this.router.navigateByUrl('/');
 			this.userData.next(null);
 		});
+		console.log('storage token removed');
 	}
 }
