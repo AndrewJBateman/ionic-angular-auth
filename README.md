@@ -90,7 +90,7 @@ canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. Tested using ionic server and dummy user credentials to replace 'register' function.
+* Status: Working. Updated may 2021. Tested using ionic server and dummy user credentials to replace 'register' function.
 * To-do: Nothing
 
 ## :clap: Inspiration
