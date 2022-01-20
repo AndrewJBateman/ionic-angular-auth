@@ -38,9 +38,9 @@
 
 ## :signal_strength: Technologies
 
-* [Ionic v5](https://ionicframework.com/)
-* [Ionic/angular v5](https://ionicframework.com/)
-* [Angular v12](https://angular.io/)
+* [Ionic v6](https://ionicframework.com/)
+* [Ionic/angular v6](https://ionicframework.com/)
+* [Angular v13](https://angular.io/)
 * [Angular RxJS Library v6](https://angular.io/guide/rx-library) Observable functions
 * [@auth0/angular-jwt v5](https://www.npmjs.com/package/@auth0/angular-jwt) provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.
 * [Ionic Storage for Angular v3](https://www.npmjs.com/package/@ionic/storage-angular) key-value Storage module based on LocalForage.
@@ -90,7 +90,7 @@ canActivate(route: ActivatedRouteSnapshot): Observable<boolean> {
 
 ## :clipboard: Status & To-do list
 
-* Status: Working. Updated may 2021. Tested using ionic server and dummy user credentials to replace 'register' function.
+* Status: Working. Tested using ionic server and dummy user credentials to replace 'register' function.
 * To-do: Nothing
 
 ## :clap: Inspiration
