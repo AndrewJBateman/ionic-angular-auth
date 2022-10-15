@@ -21,6 +21,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-do list](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -40,7 +41,7 @@
 
 * [Ionic v6](https://ionicframework.com/)
 * [Ionic/angular v6](https://ionicframework.com/)
-* [Angular v13](https://angular.io/)
+* [Angular v14](https://angular.io/)
 * [Angular RxJS Library v7](https://angular.io/guide/rx-library) Observable functions
 * [@auth0/angular-jwt v5](https://www.npmjs.com/package/@auth0/angular-jwt) provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.
 * [Ionic Storage for Angular v3](https://www.npmjs.com/package/@ionic/storage-angular) key-value Storage module based on LocalForage.
